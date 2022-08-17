@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Products</h1>
+    <div class="row">
+        {% for product in products %}
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                  <img src="{{product.image_url}}" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <p class="card-text">£{{ product.price }}</p>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                  </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <!--<ul>-->
+        <!--    <li>Item 1</li>-->
+        <!--    <li>Item 2</li>-->
+        <!--    <li>Item 3</li>-->
+    <!--    {% for product in products %}   &lt;!&ndash; no colon at end of line &ndash;&gt;-->
+    <!--    <li>{{product.name}} (£{{product.price}})-->
+    <!--        <img src="{{product.image_url}}" alt="{{product.name}}" style="Width:250px">-->
+    <!--    </li>-->
+    <!--    {% endfor %}    &lt;!&ndash; For loop must be ended in Django unlike normal Python&ndash;&gt;-->
+    <!--</ul>-->
+{% endblock %}
